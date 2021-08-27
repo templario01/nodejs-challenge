@@ -22,9 +22,11 @@
 function template(template, character, message) {
     let messageIndex = 0;
     let result = '';
+
     if (!template.includes(character) || message === '') { //si el template no incluye el caracter o si el mensaje es vacio
       return 'Invalid parameters';
     }
+    
     for (const key in template) {
       if ((template[key] === character) && (messageIndex < message.length)) { //cuando la letra del template coincide con caracter y aun no hemos terminado de recorrerel mensaje
         result += message[messageIndex];
@@ -33,6 +35,7 @@ function template(template, character, message) {
         result += template[key];
       }
     }
+
     return result;
   }
   

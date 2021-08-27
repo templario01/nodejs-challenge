@@ -70,6 +70,7 @@ function morseCode(message, convertTo) {
     }
     newPhrase = newPhrase.slice(0,-1) // quitamos el ultimo espacio del nuevo string
   }
+
   if (convertTo === 'english') {
     tempMorse = messageCopy //almacenamos en un array: cambiamos los 3 espacios por 2, separamos cada letra morse, los espacios vacios lo cambiamos a un espacio
     .replace(/\s\s\s/g,'  ')
@@ -85,6 +86,7 @@ function morseCode(message, convertTo) {
       }
     }
   }
+  
   return newPhrase;
 }
 
