@@ -61,18 +61,18 @@ function morseCode(message, convertTo) {
   let newPhrase = '';
 
   if (convertTo === 'morse') {
-    for (const letterEnglish of messageCopy) { //recorremos string del mensaje en ingles
+    for (const letterEnglish of messageCopy) { 
       for (const keyLetter in morseCodes) {
-        if (morseCodes[keyLetter] === letterEnglish) { // morseCodes['.--.'] = P si hay coincidencia entre la letra de morsecodes y la letra del mensaje
-          newPhrase += keyLetter + ' '; //en la ultima iteracion anadira un espacio al final
+        if (morseCodes[keyLetter] === letterEnglish) { 
+          newPhrase += keyLetter + ' '; 
         }
       }
     }
-    newPhrase = newPhrase.slice(0,-1) // quitamos el ultimo espacio del nuevo string
+    newPhrase = newPhrase.slice(0,-1) 
   }
 
   if (convertTo === 'english') {
-    tempMorse = messageCopy //almacenamos en un array: cambiamos los 3 espacios por 2, separamos cada letra morse, los espacios vacios lo cambiamos a un espacio
+    tempMorse = messageCopy 
     .replace(/\s\s\s/g,'  ')
     .split(' ')
     .map(function (item) {
